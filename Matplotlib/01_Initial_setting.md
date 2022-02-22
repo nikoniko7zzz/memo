@@ -14,12 +14,12 @@
 
 このファイルを、matplotlibのttfフォントのフォルダにコピーします。
 ```python
-$ cp ipaexg.ttf /Users/niko/Desktop/MyApp/study/python/environment_3_9_7/bin/python3.9/site-packages/matplotlib/mpl-data/fonts/ttf
+$ cp ipaexg.ttf /Users/niko/Desktop/MyApp/study/python/environment_3_9_7/lib/python3.9/site-packages/matplotlib/mpl-data/fonts/ttf
 ```
 
 matplotlibrcをテキストエディットで開く
 ```python
-/Users/niko/Desktop/MyApp/study/python/environment_3_9_7/bin/python3.9/site-packages/matplotlib/mpl-data/matplotlibrc
+/Users/niko/Desktop/MyApp/study/python/environment_3_9_7/lib/python3.9/site-packages/matplotlib/mpl-data/matplotlibrc
 ```
 <img src='img/2022-01-27-23-38-23.png' width='100%'>
 
@@ -53,6 +53,20 @@ plt.title("TESTグラフ")
 plt.show()
 ```
 <img src='img/2022-01-28-09-13-29.png' width='40%'>
+
+
+
+これを今後の定型とする
+```python
+import pandas as pd
+import numpy as np
+from matplotlib import pyplot as plt
+%matplotlib inline #インライン表示 & plt.show()を書かなくても表示できる
+plt.rcParams["font.family"] = "IPAexGothic" # 日本語の文字化け防止
+import seaborn as sns
+sns.set(font="IPAexGothic",style="darkgrid")
+pd.set_option("display.max_columns", 50) #jupyter notebook上で表示できるカラム数を50に設定
+```
 
 Matplotlibの日本語化 完成
 ___

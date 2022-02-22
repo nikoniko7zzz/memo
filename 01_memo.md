@@ -3,6 +3,7 @@
 - [対話モード](#対話モード)
 - [vscode リロード](#vscode-リロード)
 - [環境変数(APIキーなど、Githubに出せないものを変数で呼び出す)](#環境変数apiキーなどgithubに出せないものを変数で呼び出す)
+- [Github](#github)
 
 # 環境設定
 このpythonフォルダの中は、一つの仮想空間で管理する
@@ -26,7 +27,8 @@ ___
 ___
 
 # vscode リロード
-`command` + `r`  webのリロードと同じだなー
+command+shift+p -> reload
+
 
 # 環境変数(APIキーなど、Githubに出せないものを変数で呼び出す)
 
@@ -36,6 +38,7 @@ pip install python-dotenv
 ```
 - 環境変数として呼び出すファイル
 ```python
+# .env ファイルをロードして環境変数へ反映
 from dotenv import load_dotenv
 import os
 load_dotenv()
@@ -50,4 +53,10 @@ OPENAI_API_KEY=***********************
   .gitignoreファイルに明示する
 ```python
 .env
+```
+
+# Github
+```python
+git push -f
+git push origin master -f
 ```
